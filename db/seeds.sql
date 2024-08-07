@@ -1,4 +1,4 @@
-INSERT INTO departments (name)
+INSERT INTO departments (department_name)
 VALUES ('Chief Executive Suite'),                       -- 1
        ('Human Resources'),                             -- 2
        ('Custodial Service'),                           -- 3
@@ -13,7 +13,7 @@ VALUES ('Chief Executive Suite'),                       -- 1
        ('Marketing'),                                   -- 12
        ('Mystery Department');                          -- 13
        
-INSERT INTO roles (title, salary, management, department_id)
+INSERT INTO roles (role_title, salary, management, department_id)
 VALUES ('Chief Executive Officer', 83000000, true, 1),  -- 1
        ('Chief Financial Officer', 38000000, true, 1),  -- 2
        ('Chief Technology Officer', 40000000, true, 1), -- 3
@@ -66,26 +66,25 @@ VALUES ('Chief Executive Officer', 83000000, true, 1),  -- 1
        ('Sr. Graphic Designer', 5, true, 12), -- 41
        ('Intern', 900000000, false, 12), -- 42
        --
-       ('Mystery Person', 3000000000, false, 13); -- 43
+       ('Mystery Person', 3000000000, false, 13), -- 43
        --
        ('HR Manager', 200000, true, 2), -- 44
        ('HR Assistant', 65000, false, 2), -- 45
        ('Benefits Specialist', 75000, false, 2), -- 46
        ('Retirement Benefits Specialist', 75000, false, 2), -- 47
-       ('Intern', 900000000, false, 2), -- 48
        --
-       ('Chief of Security', 275000, false, 10),       -- 49
-       ('Security Comms', 175000, false, 10),       -- 50
+       ('Chief of Security', 275000, false, 10),       -- 48
+       ('Security Comms', 175000, false, 10),       -- 49
        --
-       ('Jr. Advocacy Specialist', 45000, false, 4),       -- 51
-       ('Sr. Advocacy Specialist', 65000, false, 4),       -- 52
-       ('Advocacy Manager', 85000, true, 4),              -- 53
-       ('President of Advocacy', 225000, true, 4),         -- 54
-       ('Vice President of Advocacy', 125000, true, 4),    -- 55
+       ('Jr. Advocacy Specialist', 45000, false, 4),       -- 50
+       ('Sr. Advocacy Specialist', 65000, false, 4),       -- 51
+       ('Advocacy Manager', 85000, true, 4),              -- 52
+       ('President of Advocacy', 225000, true, 4),         -- 53
+       ('Vice President of Advocacy', 125000, true, 4),    -- 54
        --
-       ('Maintenance Specialist', 45000, false, 4),       -- 56
-       ('Chief Maintenance Specialist', 65000, false, 4),       -- 57
-       ('Supplier', 85000, true, 4),              -- 58
+       ('Maintenance Specialist', 45000, false, 4),       -- 55
+       ('Chief Maintenance Specialist', 65000, false, 4),       -- 56
+       ('Supplier', 85000, true, 4);              -- 57
        
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
 -- C Suite
@@ -95,93 +94,91 @@ VALUES ('Sofia','Santos', 1, NULL), --1
        ('Farah', 'Malik', 4, NULL), --4
        -- Custodian
        ('Solomon', 'Asante', 13, NULL), --5
-       ('Mai', 'Nguyen', 14, 13), --6
-       ('Andrej', 'Novak', 14, 13), --7
-       ('Sakina', 'Amini', 14, 13), --8
-       ('Roberto', 'Vargas', 14, 13), --9
+       ('Mai', 'Nguyen', 14, 5), --6
+       ('Andrej', 'Novak', 14, 5), --7
+       ('Sakina', 'Amini', 14, 5), --8
+       ('Roberto', 'Vargas', 14, 5), --9
        -- Security
        ('Zainab', 'Abdul', 49, NULL), --10
-       ('Jan', 'Kowalski', 50, 49), --11
-       ('Yasmin', 'Bashir', 15, 49), --12
-       ('Francisco', 'Torres', 15, 49), --13
-       ('Samira', 'Abdullahi', 15, 49), --14
+       ('Jan', 'Kowalski', 50, 10), --11
+       ('Yasmin', 'Bashir', 15, 10), --12
+       ('Francisco', 'Torres', 15, 10), --13
+       ('Samira', 'Abdullahi', 15, 10), --14
        -- Log
        ('Chen', 'Wei', 26, NULL), --15
-       ('Nikolai', 'Volkov', 16, 26), --16
+       ('Nikolai', 'Volkov', 16, 15), --16
        ('Aliyah', 'Brown', 25, 16), --17
        ('Felipe', 'Silva', 27, 16), --18
        ('Mariam', 'Khalid', 28, 16), --19
        -- FUNK
        ('Satoshi', 'Yamamoto', 5, NULL), --20
        ('Liliana', 'Costa', 6, NULL), --21
-       ('Omar', 'El-Sayed', 7, 6), --22
-       ('Mateusz', 'Kwiatkowski', 8, 7), --23
-       ('Keiko', 'Mori', 9, 7), --24
-       ('Zahra', 'Begum', 10, 10), --25
-       ('Lars', 'Jensen', 11, 7), --26
+       ('Omar', 'El-Sayed', 7, 21), --22
+       ('Mateusz', 'Kwiatkowski', 8, 22), --23
+       ('Keiko', 'Mori', 9, 22), --24
+       ('Zahra', 'Begum', 10, 22), --25
+       ('Lars', 'Jensen', 11, 22), --26
        ('Yasmine', 'Mahmoud', 12, NULL), --27
        -- HR
        ('Arianna', 'Conte', 44, NULL), --28
-       ('Aditya', 'Rao', 45, 44), --29
-       ('Felipe', 'Ramirez', 46, 44), --30
-       ('Leila', 'Morales', 47, 44), --31
-       ('Dmitry', 'Ivanov', 48, 44), --32
+       ('Aditya', 'Rao', 45, 28), --29
+       ('Felipe', 'Ramirez', 46, 28), --30
+       ('Leila', 'Morales', 47, 28), --31
+       ('Dmitry', 'Ivanov', 48, 28), --32
        -- Mystery
-       ('Gustav', 'Lindholm', 5, false, NULL), --33
+       ('Gustav', 'Lindholm', 5, NULL), --33
        -- Legal
-       ('Carlos', 'Mendes', 32, 11), --34
-       ('Anika', 'Kumar', 33, 8), --35
-       ('Pedro', 'Alvarez', 29, 9), --36
-       ('Mei', 'Lin', 29, 23), --37
-       ('Ivan', 'Petrov', 29, 18), --38
-       ('Nia', 'Johnson', 29, 14); --39
-       ('Aarav', 'Sharma', 30, 4), --40
-       ('Liam', 'Sullivan', 30, 0), --41
-       ('Mei', 'Wong', 31, 0), --42
-       ('Anika', 'Muller', 31, 15), --43
-       ('Juan', 'Rodriguez', 31, 11), --44
+       ('Carlos', 'Mendes', 32, NULL), --34
+       ('Anika', 'Kumar', 33, 34), --35
+       ('Pedro', 'Alvarez', 29, 34), --36
+       ('Mei', 'Lin', 29, 34), --37
+       ('Ivan', 'Petrov', 29, 34), --38
+       ('Nia', 'Johnson', 29, 34), --39
+       ('Aarav', 'Sharma', 30, 34), --40
+       ('Liam', 'Sullivan', 30, 34), --41
+       ('Mei', 'Wong', 31, 34), --42
+       ('Anika', 'Muller', 31, 34), --43
+       ('Juan', 'Rodriguez', 31, 34), --44
        -- Product
-       ('Dmitry', 'Ivanov', 5, 0), --45
-       ('Keiko', 'Tanaka', 2, 11), --46
-       ('Yara', 'Haddad', 3, 8), --47
-       ('Carlos', 'Mendes', 4 ,9), --48
+       ('Dmitry', 'Ivanov', 5, NULL), --45
+       ('Keiko', 'Tanaka', 2, 45), --46
+       ('Yara', 'Haddad', 3, 45), --47
+       ('Carlos', 'Mendes', 4, 45), --48
        -- Marketing
        ('Elena', 'Popescu', 38, NULL), --49
-       ('Nina', 'Kowalski', 39, 38), --50
-       ('Sofia', 'Petrovic', 40, 38), --51
-       ('Kofi', 'Mensah', 41, 38), --52
-       ('Ana', 'Oliveira', 42 ,38), --53
+       ('Nina', 'Kowalski', 39, 49), --50
+       ('Sofia', 'Petrovic', 40, 49), --51
+       ('Kofi', 'Mensah', 41, 49), --52
+       ('Ana', 'Oliveira', 42 ,49), --53
        -- IT
        ('Hassan', 'Abdallah', 17, NULL), --54
-       ('Lucia', 'Rossi', 18, 17), --55
-       ('Olga', 'Morozova', 19, 23), --56
-       ('Nguyen', 'Thi Mai', 20, 19), --57
-       ('William', 'Brown', 21, 19), --58
-       ('Maya', 'Cohen', 22, 19), --59
-       ('Pierre', 'Dupont', 23, 18), --60
-       ('Ingrid', 'Bjornstad', 24, 18), --61
+       ('Lucia', 'Rossi', 18, 54), --55
+       ('Olga', 'Morozova', 19, 54), --56
+       ('Nguyen', 'Thi Mai', 20, 54), --57
+       ('William', 'Brown', 21, 54), --58
+       ('Maya', 'Cohen', 22, 54), --59
+       ('Pierre', 'Dupont', 23, 54), --60
+       ('Ingrid', 'Bjornstad', 24, 54), --61
        -- Customer Advocacy
        ('Sleve', 'McDichael', 54, NULL), --62
-       ('Onson', 'Sweemey', 55, 54), --63
-       ('Darryl', 'Archideld', 53, 55), --64
-       ('Anatoli', 'Smorin', 53, 55), --65
-       ('Rey', 'McSriff', 53, 55), --66
-       ('Glenallen', 'Mixon', 53, 55), --67
-       ('Mario', 'McAlwain', 52, 18), --68
-       ('Raul', 'Chamgerlain', 52, 18), --69
+       ('Onson', 'Sweemey', 55, 62), --63
+       ('Darryl', 'Archideld', 53, 62), --64
+       ('Anatoli', 'Smorin', 53, 62), --65
+       ('Rey', 'McSriff', 53, 62), --66
+       ('Glenallen', 'Mixon', 53, 62), --67
+       ('Mario', 'McAlwain', 52, 62), --68
+       ('Raul', 'Chamgerlain', 52, 62), --69
        ('Kevin', 'Nogliny', 52, NULL), --70
-       ('Tony', 'Smehrik', 52, 17), --71
-       ('Bobson', 'Dugnutt', 52, 23), --72
-       ('Willie', 'Dustice', 52, 19), --73
-       ('Jeromy', 'Gride', 52, 19), --74
-       ('Scott', 'Dourque', 52, 19), --75
-       ('Shown', 'Furcotte', 51, 18), --76
-       ('Dean', 'Wesrey', 51, 18), --77
-       ('Mike', 'Truk', 51, 23), --78
-       ('Dwigt', 'Rortugal', 51, 19), --79
-       ('Tim', 'Sandaele', 51, 19), --80
-       ('Karl', 'Dandleton', 51, 19), --81
-       ('Mike', 'Sernandez', 51, 18), --82
-       ('Todd', 'Bonzalez', 51, 18), --83
-    
-       
+       ('Tony', 'Smehrik', 52, 62), --71
+       ('Bobson', 'Dugnutt', 52, 62), --72
+       ('Willie', 'Dustice', 52, 62), --73
+       ('Jeromy', 'Gride', 52, 62), --74
+       ('Scott', 'Dourque', 52, 62), --75
+       ('Shown', 'Furcotte', 51, 62), --76
+       ('Dean', 'Wesrey', 51, 62), --77
+       ('Mike', 'Truk', 51, 62), --78
+       ('Dwigt', 'Rortugal', 51, 62), --79
+       ('Tim', 'Sandaele', 51, 62), --80
+       ('Karl', 'Dandleton', 51, 62), --81
+       ('Mike', 'Sernandez', 51, 62), --82
+       ('Todd', 'Bonzalez', 51, 62); --83
