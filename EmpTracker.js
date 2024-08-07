@@ -1,5 +1,6 @@
 const express = require('express');
 const { Pool } = require('pg');
+// The external script contains input handling for our application main menu.
 const { input } = require('./lib/input.js');
 const inquirer = require('inquirer');
 
@@ -29,6 +30,7 @@ pool.connect();
 
 async function init() {
     console.clear();
+    // Pulls input from the input.js file to be processed through a switch-case selection handler.
     const { menu } = await input();
     switch (menu) {
         case 'View Departments':
@@ -159,18 +161,6 @@ async function init() {
         }
         return true;
     }
-
-// pool.query('INSERT INTO departments', function (err, {rows}) {
-//     console.log(rows);
-// });
-
-// pool.query('INSERT INTO roles', function (err, {rows}) {
-//     console.log(rows);
-// });
-
-// pool.query('INSERT INTO employees', function (err, {rows}) {
-//     console.log(rows);
-// });
 
 app.use((req, res) => {
     res.status(404).end();
