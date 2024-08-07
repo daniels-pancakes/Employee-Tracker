@@ -55,15 +55,15 @@ VALUES ('Chief Executive Officer', 83000000, true, 1),  -- 1
        ('President of Legal Services', 1000000, true, 4), -- 32
        ('Vice President of Legal Services', 600000, true, 4), -- 33
        --
-       ('Lead Product Designer', 1, true, 11), -- 34
-       ('Product Manufacturer', 2, true, 11), -- 35
-       ('Jr. Product Designer', 5, false, 11), -- 36
-       ('Sr. Product Designer', 2, true, 11), -- 37
+       ('Lead Product Designer', 100000, true, 11), -- 34
+       ('Product Manufacturer', 200000, true, 11), -- 35
+       ('Jr. Product Designer', 500000, false, 11), -- 36
+       ('Sr. Product Designer', 200000, true, 11), -- 37
        --
-       ('Marketing Manager', 3, true, 12), -- 38
-       ('Marketing Assistant', 4 , true, 12), -- 39
-       ('Jr. Graphic Designer', 1, true, 12), -- 40
-       ('Sr. Graphic Designer', 5, true, 12), -- 41
+       ('Marketing Manager', 300000, true, 12), -- 38
+       ('Marketing Assistant', 400000, true, 12), -- 39
+       ('Jr. Graphic Designer', 100000, true, 12), -- 40
+       ('Sr. Graphic Designer', 500000, true, 12), -- 41
        ('Intern', 900000000, false, 12), -- 42
        --
        ('Mystery Person', 3000000000, false, 13), -- 43
