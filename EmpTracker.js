@@ -78,7 +78,7 @@ async function init() {
                 ]);
                 await pool.query(`INSERT INTO departments (department_name)
                                 VALUES ($1)
-                `, [response.deptName]);
+                `, [addDept.deptName]);
                     console.log('New department successfully added.')
             break;
         case 'Add Role':
